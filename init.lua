@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 
 require('other-setup')
-require('treesitter-setup')
+require('nvim-treesitter.configs').setup {}
 
 -- Setup neovim lua configuration
 require('neodev').setup()
