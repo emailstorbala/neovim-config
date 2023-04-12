@@ -5,10 +5,6 @@
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   clangd = {},
-  jedi_language_server= {},
-  --gopls = {},
-  rust_analyzer = {},
-  -- tsserver = {},
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
