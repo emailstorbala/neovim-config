@@ -5,3 +5,10 @@ Once the steps followed in https://docs.astronvim.com/ is completed, apply the p
 on top of the configuration.
 
 Note: This patch works only with Astronvim version 4 code.
+
+# Apply patch:
+```
+wrk_dir=$(pwd)
+cd ~/.config/nvim
+patch -b -V numbered < "${wrk_dir}/astronvim4.patch"
+```
