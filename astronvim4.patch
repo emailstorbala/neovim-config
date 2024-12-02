@@ -36,7 +36,7 @@ index 2ce1cdd..643f873 100644
 +  }
 +}
 diff --git a/lua/plugins/astrocore.lua b/lua/plugins/astrocore.lua
-index c99b395..a3f0ccb 100644
+index cda56a8..7b403e4 100644
 --- a/lua/plugins/astrocore.lua
 +++ b/lua/plugins/astrocore.lua
 @@ -1,5 +1,3 @@
@@ -53,36 +53,28 @@ index c99b395..a3f0ccb 100644
 +        relativenumber = false, -- sets vim.opt.relativenumber
          number = true, -- sets vim.opt.number
          spell = false, -- sets vim.opt.spell
-         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-@@ -62,6 +60,7 @@ return {
-         -- tables with just a `desc` key will be registered with which-key if it's installed
-         -- this is useful for naming menus
-         ["<Leader>b"] = { desc = "Buffers" },
-+        ["<Leader>p"] = { ":e#<cr>", desc = "Toggle" },
-         -- quick save
-         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-       },
-diff --git a/lua/plugins/astroui.lua b/lua/plugins/astroui.lua
-index 737a2fb..1aa80e0 100644
---- a/lua/plugins/astroui.lua
-+++ b/lua/plugins/astroui.lua
+         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+diff --git a/lua/plugins/astrolsp.lua b/lua/plugins/astrolsp.lua
+index 720b9d3..bfe7b8f 100644
+--- a/lua/plugins/astrolsp.lua
++++ b/lua/plugins/astrolsp.lua
 @@ -1,5 +1,3 @@
 -if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -
- -- AstroUI provides the basis for configuring the AstroNvim User Interface
- -- Configuration documentation can be found with `:h astroui`
+ -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
+ -- Configuration documentation can be found with `:h astrolsp`
  -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
-@@ -11,7 +9,7 @@ return {
-   ---@type AstroUIOpts
-   opts = {
-     -- change colorscheme
--    colorscheme = "astrodark",
-+    colorscheme = "nightfly",
-     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
-     highlights = {
-       init = { -- this table overrides highlights in all themes
+@@ -20,7 +18,7 @@ return {
+     formatting = {
+       -- control auto formatting on save
+       format_on_save = {
+-        enabled = true, -- enable or disable format on save globally
++        enabled = false, -- enable or disable format on save globally
+         allow_filetypes = { -- enable format on save for specified filetypes only
+           -- "go",
+         },
 diff --git a/lua/plugins/user.lua b/lua/plugins/user.lua
-index 121089e..d46396f 100644
+index 121089e..c43efe0 100644
 --- a/lua/plugins/user.lua
 +++ b/lua/plugins/user.lua
 @@ -1,5 +1,3 @@
@@ -91,10 +83,9 @@ index 121089e..d46396f 100644
  -- You can also add or configure plugins by creating files in this `plugins/` folder
  -- Here are some examples:
  
-@@ -82,4 +80,6 @@ return {
+@@ -82,4 +80,5 @@ return {
        )
      end,
    },
-+  { "bluz71/vim-nightfly-colors" },
 +  { "LhKipp/nvim-nu" }
  }
