@@ -1,8 +1,8 @@
 diff --git a/init.lua b/init.lua
-index 2ce1cdd..643f873 100644
+index 2ce1cdd..76f6f76 100644
 --- a/init.lua
 +++ b/init.lua
-@@ -17,3 +17,32 @@ end
+@@ -17,3 +17,29 @@ end
  
  require "lazy_setup"
  require "polish"
@@ -13,11 +13,8 @@ index 2ce1cdd..643f873 100644
 +  trail = '#',
 +}
 +
-+local cmp_nvim_lsp = require "cmp_nvim_lsp"
-+
 +require("lspconfig").clangd.setup {
 +  on_attach = on_attach,
-+  capabilities = cmp_nvim_lsp.default_capabilities(),
 +  cmd = {
 +    "clangd",
 +    "--offset-encoding=utf-16",
@@ -36,7 +33,7 @@ index 2ce1cdd..643f873 100644
 +  }
 +}
 diff --git a/lua/plugins/astrocore.lua b/lua/plugins/astrocore.lua
-index cda56a8..7b403e4 100644
+index 03d7441..a029977 100644
 --- a/lua/plugins/astrocore.lua
 +++ b/lua/plugins/astrocore.lua
 @@ -1,5 +1,3 @@
@@ -45,7 +42,7 @@ index cda56a8..7b403e4 100644
  -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
  -- Configuration documentation can be found with `:h astrocore`
  -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
-@@ -27,7 +25,7 @@ return {
+@@ -40,7 +38,7 @@ return {
      -- vim options can be configured here
      options = {
        opt = { -- vim.opt.<key>
@@ -54,36 +51,17 @@ index cda56a8..7b403e4 100644
          number = true, -- sets vim.opt.number
          spell = false, -- sets vim.opt.spell
          signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-diff --git a/lua/plugins/astrolsp.lua b/lua/plugins/astrolsp.lua
-index 720b9d3..bfe7b8f 100644
---- a/lua/plugins/astrolsp.lua
-+++ b/lua/plugins/astrolsp.lua
-@@ -1,5 +1,3 @@
--if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
--
- -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
- -- Configuration documentation can be found with `:h astrolsp`
- -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
-@@ -20,7 +18,7 @@ return {
-     formatting = {
-       -- control auto formatting on save
-       format_on_save = {
--        enabled = true, -- enable or disable format on save globally
-+        enabled = false, -- enable or disable format on save globally
-         allow_filetypes = { -- enable format on save for specified filetypes only
-           -- "go",
-         },
 diff --git a/lua/plugins/user.lua b/lua/plugins/user.lua
-index 121089e..c43efe0 100644
+index b7de6df..8163929 100644
 --- a/lua/plugins/user.lua
 +++ b/lua/plugins/user.lua
 @@ -1,5 +1,3 @@
 -if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -
  -- You can also add or configure plugins by creating files in this `plugins/` folder
+ -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
  -- Here are some examples:
- 
-@@ -82,4 +80,5 @@ return {
+@@ -85,4 +83,5 @@ return {
        )
      end,
    },
