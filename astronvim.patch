@@ -1,0 +1,87 @@
+ init.lua                  | 18 ++++++++++++++++++
+ lua/plugins/astrocore.lua |  4 +---
+ lua/plugins/astrolsp.lua  |  4 +---
+ lua/plugins/user.lua      |  4 +---
+ 4 files changed, 21 insertions(+), 9 deletions(-)
+
+diff --git a/init.lua b/init.lua
+index 424e48d..e494d2c 100644
+--- a/init.lua
++++ b/init.lua
+@@ -25,3 +25,21 @@ end
+ 
+ require "lazy_setup"
+ require "polish"
++
++vim.opt.listchars = {
++  eol = '⤶',
++  space = '.',
++  trail = '#',
++}
++
++require'lspconfig'.pylsp.setup{
++  settings = {
++    pylsp = {
++      plugins = {
++        pycodestyle = {
++          maxLineLength = 100
++        }
++      }
++    }
++  }
++}
+diff --git a/lua/plugins/astrocore.lua b/lua/plugins/astrocore.lua
+index 03d7441..a029977 100644
+--- a/lua/plugins/astrocore.lua
++++ b/lua/plugins/astrocore.lua
+@@ -1,5 +1,3 @@
+-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-
+ -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
+ -- Configuration documentation can be found with `:h astrocore`
+ -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
+@@ -40,7 +38,7 @@ return {
+     -- vim options can be configured here
+     options = {
+       opt = { -- vim.opt.<key>
+-        relativenumber = true, -- sets vim.opt.relativenumber
++        relativenumber = false, -- sets vim.opt.relativenumber
+         number = true, -- sets vim.opt.number
+         spell = false, -- sets vim.opt.spell
+         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+diff --git a/lua/plugins/astrolsp.lua b/lua/plugins/astrolsp.lua
+index 720b9d3..bfe7b8f 100644
+--- a/lua/plugins/astrolsp.lua
++++ b/lua/plugins/astrolsp.lua
+@@ -1,5 +1,3 @@
+-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-
+ -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
+ -- Configuration documentation can be found with `:h astrolsp`
+ -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
+@@ -20,7 +18,7 @@ return {
+     formatting = {
+       -- control auto formatting on save
+       format_on_save = {
+-        enabled = true, -- enable or disable format on save globally
++        enabled = false, -- enable or disable format on save globally
+         allow_filetypes = { -- enable format on save for specified filetypes only
+           -- "go",
+         },
+diff --git a/lua/plugins/user.lua b/lua/plugins/user.lua
+index b7de6df..06537c6 100644
+--- a/lua/plugins/user.lua
++++ b/lua/plugins/user.lua
+@@ -1,5 +1,3 @@
+-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-
+ -- You can also add or configure plugins by creating files in this `plugins/` folder
+ -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
+ -- Here are some examples:
+@@ -84,5 +82,5 @@ return {
+         Rule("a", "a", "-vim")
+       )
+     end,
+-  },
++  }
+ }
