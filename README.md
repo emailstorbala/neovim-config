@@ -10,5 +10,5 @@ Note: This patch works only with Astronvim version 4 code.
 ```
 wrk_dir=$(pwd)
 cd ~/.config/nvim
-git apply "${wrk_dir}/astronvim4.patch"
+git apply "${wrk_dir}/astronvim.patch"
 ```
