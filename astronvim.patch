@@ -91,3 +91,15 @@ index b8b121f..819ee77 100644
      },
      -- customize how language servers are attached
      handlers = {
+diff --git a/lua/polish.lua b/lua/polish.lua
+index 642719f..d858cb7 100644
+--- a/lua/polish.lua
++++ b/lua/polish.lua
+@@ -1,5 +1,5 @@
+-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-
+ -- This will run last in the setup process.
+ -- This is just pure lua so anything that doesn't
+ -- fit in the normal config locations above can go here
++
++vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#c0c0c0", bg = "none" })
